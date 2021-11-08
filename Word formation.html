@@ -1,0 +1,423 @@
+<html>
+        <head>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+        body{
+                background-color: rgb(27, 24, 37);
+        }
+        h2{
+                text-align: center;
+                font-size: 30px;
+                font-weight: 700;
+                text-shadow: 0px 0px 10px rgb(250, 250, 250);
+                color: rgb(255, 255, 255);
+                margin-top: 50px;
+                margin-bottom: 20px;
+        }
+        .calci{
+                text-align: center;
+        }
+        .green{
+                width: 100%;
+                font-size:40px;
+                font-weight: 800;
+                border: 2px solid gray;
+                border-right: 10px solid #f78181;
+border-bottom: 10px solid #e06161;
+border-radius: 10px;
+transition: border 0.1s;
+background: #FD1C03;
+color: white;
+text-shadow: 0px 0px 10px black;
+        }
+        .green:active{
+                border:5px solid gray;
+        }
+        .green:hover{
+                box-shadow: 0px 0px 10px #FD1C03, 0px 0px 40px #FD1C03;
+        }
+       
+        .black{
+                width: 100%;
+                font-size:40px;
+                font-weight: 800;
+                border: 2px solid gray;
+                border-radius: 10px;
+                border-right: 10px solid rgb(75, 138, 69);
+                border-bottom: 10px solid rgb(75, 134, 69);
+               background-color: #39FF14;
+               color: white;
+               text-shadow: 0px 0px 10px black;
+                transition: border 0.1s;
+        }
+        .black:active{
+                border:5px solid gray;
+        }
+        .black:hover{
+                box-shadow: 0px 0px 10px  #39FF14, 0px 0px 40px  #39FF14;
+        }
+       
+        .red{
+                width: 100%;
+                font-size:40px;
+                font-weight: 800;
+                border: 2px solid gray;
+                border-radius: 10px;
+                border-right: 10px solid rgb(117, 188, 201);
+                border-bottom: 10px solid rgb(111, 206, 235);
+              background-color: #009dff;
+              color: white;
+              text-shadow: 0px 0px 10px black;
+                transition: border 0.1s;
+        }
+        .red:active{
+                border:5px solid gray;
+        }
+        .red:hover{
+                box-shadow: 0px 0px 10px  #009dff, 0px 0px 40px  #099FFF;
+        }
+       
+        .data{
+                font-size:40px;
+                font-weight: 800;
+                border: 5px solid gray;
+                border-radius: 10px;
+                height: auto;
+                color: white;
+        }
+        .resu{
+                width: 100%;
+                font-size: 40px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 0px 40px  #FD1C03,0px 0px 40px #39FF14, 0px 0px 80px  #099FFF;
+
+        }
+       
+        .result{
+                width: 100%;
+                font-size:40px;
+                font-weight: 800;
+                border: 10px solid gray;
+                border-radius: 10px;
+              text-align: center;
+                height: 80px;
+                color: white;
+        }
+        @media screen and (max-width:500px) {
+                .data{
+                        display: none;
+                }
+                h2{
+                        margin-top: 20px;
+                        margin-bottom: 30px;
+                        font-size: 20px;
+                }
+                .red{
+                width: 100%;
+                font-size:30px;
+                font-weight: 800;
+                border: 2px solid gray;
+                border-radius: 10px;
+                border-right: 10px solid gray;
+                border-bottom: 10px solid gray;
+                box-shadow: 0px 0px 10px  #009dff, 0px 0px 40px  #099FFF;
+                transition: border 0.1s;
+        }
+        .green{
+                width: 100%;
+                font-size:30px;
+                font-weight: 800;
+                border: 2px solid gray;
+                border-radius: 10px;
+                border-right: 10px solid gray;
+                border-bottom: 10px solid gray;
+                box-shadow: 0px 0px 10px  #FD1C03, 0px 0px 40px  #FD1C03;
+                transition: border 0.1s;    
+        }
+        .black{
+                font-size:30px;
+                font-weight: 800;
+                border: 2px solid gray;
+                border-radius: 10px;
+                border-right: 10px solid gray;
+                border-bottom: 10px solid gray;
+                box-shadow: 0px 0px 10px  #39FF14, 0px 0px 40px  #39FF14;
+                transition: border 0.1s;  
+        }
+        .resu{
+                position: relative;
+                top: -80px;
+        }
+        .result{
+                position: relative;
+                top: -80px;
+        }
+        }
+
+</style>
+        </head>
+        <body>
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-4">
+                                        <div class="container-fluid">
+                                                <div class="container-fluid">
+                                                        <div class="row calci">
+                                                              <h2>Group 1</h2>
+                                                              <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionA()" class="green">A</button></div>
+                                                              <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionB()" class="black">B</button></div>
+                                                              <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionC()" class="red">C</button></div>
+                                                        </div>
+                                                </div>
+                                        </div>     
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="container-fluid">
+                                          <div class="container-fluid">
+                                                  <div class="row calci">
+                                                        <h2>Group 2</h2>
+                                                        <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionD()" class="green">D</button></div>
+                                                        <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionE()" class="black">E</button></div>
+                                                        <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionF()" class="red">F</button></div>
+                                                  </div>
+                                          </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                        <div class="container-fluid">
+                                                <div class="container-fluid">
+                                                        <div class="row calci">
+                                                                <h2>Group 3</h2>
+                                                              <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionG()" class="green">G</button></div>
+                                                              <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionH()" class="black">H</button></div>
+                                                              <div class="col-md-4 col-sm-4 col-xs-4"><button onclick="myfunctionI()" class="red">I</button></div>
+                                                        </div>
+                                                </div>
+                                        </div>  
+                                </div>
+                        </div>
+                </div>
+
+
+<br>
+<br>
+<br>
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-4">
+                                            
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="container-fluid">
+                                          <div class="container-fluid">
+                                                  <div class="row calci">
+                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="data">
+                                                                        <p id="demo">-</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="data">
+                                                                        <p id="demo1">-</p> 
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="data">
+                                                                        <p id="demo2">-</p>
+                                                                </div>
+                                                        </div>
+                                                  </div>
+                                          </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                         
+                                </div>
+                        </div>
+                </div>
+
+
+
+                <br>
+                <br>
+                <br>
+                                <div class="container">
+                                        <div class="row">
+                                                <div class="col-md-4">
+                                                            
+                                                </div>
+                                                <div class="col-md-4">
+                                                        <div class="container-fluid">
+                                                                <div class="row">
+                                                                        <div class="col-md-4"></div>
+                                                                        <div class="col-md-4"><button onclick="myresult()" class="resu">=</button></div>
+                                                                        <div class="col-md-4"></div>
+                                                                </div>
+                                                        </div>
+                                                        
+                                                        
+                                                </div>
+                                                <div class="col-md-4">
+                                                         
+                                                </div>
+                                        </div>
+                                </div>
+
+
+
+                                <br>
+                                <br>
+                                <br>
+                                                <div class="container">
+                                                        <div class="row">
+                                                                <div class="col-md-4">
+                                                                            
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                        <div class="container-fluid">
+                                                                                <div class="row">
+                                                                                        <div class="result">
+                                                                                                <p id="result"></p>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                         
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                
+
+
+                
+
+
+                <script>
+                       function myfunctionA(){
+                               document.getElementById("demo").innerHTML="A";
+                       }
+                       function myfunctionB(){
+                               document.getElementById("demo").innerHTML="B";
+                       }
+                       function myfunctionC(){
+                               document.getElementById("demo").innerHTML="C";
+                       }
+                       function myfunctionD(){
+                               document.getElementById("demo1").innerHTML="D";
+                       }
+                       function myfunctionE(){
+                               document.getElementById("demo1").innerHTML="E";
+                       }
+                       function myfunctionF(){
+                               document.getElementById("demo1").innerHTML="F";
+                       }
+                       function myfunctionG(){
+                               document.getElementById("demo2").innerHTML="G";
+                       }
+                       function myfunctionH(){
+                               document.getElementById("demo2").innerHTML="H";
+                       }
+                       function myfunctionI(){
+                               document.getElementById("demo2").innerHTML="I";
+                       }
+
+function myresult(){
+        var x=document.getElementById('demo').innerHTML;
+        var y=document.getElementById('demo1').innerHTML;
+        var z=document.getElementById('demo2').innerHTML;
+        if (x=="A" & y=="D" & z=="G"){
+document.getElementById("result").innerHTML="GRAND";
+        }
+        else if(x=="A" & y=="D" & z=="H"){
+                document.getElementById("result").innerHTML="HAND";
+        }
+        else if(x=="A" & y=="D" & z=="I"){
+                document.getElementById("result").innerHTML="IDEA";
+        }
+
+        else if(x=="A" & y=="E" & z=="G"){
+                document.getElementById("result").innerHTML="GAME";
+        }
+        else if(x=="A" & y=="E" & z=="H"){
+                document.getElementById("result").innerHTML="HEAL";
+        }
+        else if(x=="A" & y=="E" & z=="I"){
+                document.getElementById("result").innerHTML="ALIEN";
+        }
+        else if(x=="A" & y=="F" & z=="G"){
+                document.getElementById("result").innerHTML="AFG";
+        }
+        else if(x=="A" & y=="F" & z=="H"){
+                document.getElementById("result").innerHTML="FARAHAN";
+        }
+        else if(x=="A" & y=="F" & z=="I"){
+                document.getElementById("result").innerHTML="IRFAN";
+        }
+        else if(x=="B" & y=="D" & z=="G"){
+                document.getElementById("result").innerHTML="BADGE";
+        }
+        else if(x=="B" & y=="D" & z=="H"){
+                document.getElementById("result").innerHTML="HYBRID";
+        }
+        else if(x=="B" & y=="D" & z=="I"){
+                document.getElementById("result").innerHTML="BIDDING";
+        }
+        else if(x=="B" & y=="E" & z=="G"){
+                document.getElementById("result").innerHTML="BEGGING";
+        }
+        else if(x=="B" & y=="E" & z=="H"){
+                document.getElementById("result").innerHTML="BECHOLER";
+        }
+        else if(x=="B" & y=="E" & z=="I"){
+                document.getElementById("result").innerHTML="BEEPING";
+        }
+        else if(x=="B" & y=="F" & z=="G"){
+                document.getElementById("result").innerHTML="BFG";
+        }
+        else if(x=="B" & y=="F" & z=="H"){
+                document.getElementById("result").innerHTML="BFH";
+        }
+        else if(x=="B" & y=="F" & z=="I"){
+                document.getElementById("result").innerHTML="FIBER";
+        }
+        else if(x=="C" & y=="D" & z=="G"){
+                document.getElementById("result").innerHTML="CDG";
+        }
+        else if(x=="C" & y=="D" & z=="H"){
+                document.getElementById("result").innerHTML="HDFC";
+        }
+        else if(x=="C" & y=="D" & z=="I"){
+                document.getElementById("result").innerHTML="CID";
+        }
+        else if(x=="C" & y=="E" & z=="G"){
+                document.getElementById("result").innerHTML="CEG";
+        }
+        else if(x=="C" & y=="E" & z=="H"){
+                document.getElementById("result").innerHTML="CEH";
+        }
+        else if(x=="C" & y=="E" & z=="I"){
+                document.getElementById("result").innerHTML="CEI";
+        }
+        else if(x=="C" & y=="F" & z=="G"){
+                document.getElementById("result").innerHTML="CFG";
+        }
+        else if(x=="C" & y=="F" & z=="H"){
+                document.getElementById("result").innerHTML="CFH";
+        }
+        else if(x=="C" & y=="F" & z=="I"){
+                document.getElementById("result").innerHTML="CFI";
+        }
+        
+}
+
+                </script>
+        </body>
+</html>
